@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <section class="menu">
+    <!-- title -->
+    <div class="title">
+      <h2>our menu</h2>
+      <div class="underline"></div>
+    </div>
+    <button type="button" class="filter-btn" data-id="all" onclick="hightolow()">Price High to Low</button>
+    <button type="button" class="filter-btn" data-id="all" onclick="lowtohigh()">Price Low to High</button>
+    <!-- <div id="mycartcount"></div> -->
+    <div class="cart-section">
+      <div class="">
+        <h2>My Cart</h2>
+        <div class="underline"></div>
+        <h4 class="item-text quantity" id="totalcartvalue"></h4>
+        <h4 class="item-text quantity" id="totalcartquantity"></h4>
+      </div>
+
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <div id="cartcount" class="cartcount carousel-inner"></div>
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button> -->
+      </div>
+    </div>
+    <!-- filter buttons -->
+    <div class="btn-container" id="btn">
+    </div>
+    <!-- menu items -->
+    <div class="section-center" id="menu">
+      <!-- single item -->
+    </div>
+  </section>
+  
+
+  <!-- <div class="myCartTotal">
+    <h5><strong>Items in Cart: </strong></h5>
+    <span id="cartcount">0</span>
+    <h5><strong>Total: </strong></h5>
+    <span id="total">$0.00</span>
+  </div> -->
+
+  <!-- <div class="section-center">
+    <div id="tj"></div>
+    <ul id="weightlist"></ul>
+    </div> -->
+
+    <!-- <div id="displayproduct"></div> -->
+
+  <!-- javascript -->
+  <script src="app.js"></script>
+  <script src="hello.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+
+</html>
