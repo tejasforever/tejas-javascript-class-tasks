@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <script>
+
+        var t = [1,2,3,4,5,99,2,5,3,1,99,6,2];
+
+        var h = t.findIndex(function(r){
+            return r == 99;
+        })
+        console.log(h);
+
+    </script>
+
+    <script>
+        var h = [5,9,7,3,8,14,5,846,15,24,54,5,48,22,46];
+        var r = h.indexOf(5,2);
+        console.log(r);
+        var rt = h.lastIndexOf(5);
+        console.log(rt);
+    </script>
+
+    <script>
+        var h = [5,9,7,3,8,9,14,5,15,24,54,5,48,22,46];
+        let reduceDuplicateValue = h.reduce(function(pre,next,index,array){
+            // if(array.indexOf(next) == array.lastIndexOf(next))
+            if(!pre.includes(next))
+            {
+                pre.push(next);
+            }
+            return pre;
+        },[]);
+        var test = reduceDuplicateValue.sort(function(a,b){
+            return b-a;
+        }); // Sorts the array in ascending order
+        console.log(test);
+        var test = reduceDuplicateValue.reverse(); // Reverses the array order
+        console.log(test);
+        // console.log(reduceDuplicateValue);
+    </script>
+</body>
+</html>
