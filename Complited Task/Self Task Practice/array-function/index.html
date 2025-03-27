@@ -29,8 +29,8 @@
     <script>
         var h = [5,9,7,3,8,9,14,5,15,24,54,5,48,22,46];
         let reduceDuplicateValue = h.reduce(function(pre,next,index,array){
-            // if(array.indexOf(next) == array.lastIndexOf(next))
-            if(!pre.includes(next))
+            if(array.indexOf(next) == array.lastIndexOf(next))
+            // if(!pre.includes(next))
             {
                 pre.push(next);
             }
@@ -38,11 +38,50 @@
         },[]);
         var test = reduceDuplicateValue.sort(function(a,b){
             return b-a;
-        }); // Sorts the array in ascending order
+        });
         console.log(test);
-        var test = reduceDuplicateValue.reverse(); // Reverses the array order
+        var test = reduceDuplicateValue.reverse(); 
         console.log(test);
-        // console.log(reduceDuplicateValue);
+        console.log(reduceDuplicateValue);
+    </script>
+
+    <script>
+        let het = [1,2,37,455,5,65,7,8,45,33];
+
+        let sliceout = het.slice(2,3);
+        console.log(sliceout);
+        let sliceoutRevverrce = het.slice(-5,-3);
+        console.log(sliceoutRevverrce);
+    </script>
+
+    <script>
+        let myInfo = "this is my javascript this is my javascript this is my javascript";
+        let info = myInfo.split(" ", 3);
+        console.log(info);
+        let info1 = myInfo.replace("my","abc");
+        console.log(info1);
+        //to make case insensetiv use "i" and for globlay use "ig"
+        let info2 = myInfo.replace(/My/ig,"xyz");
+        console.log(info2);
+        let info3 = myInfo.replace(/My/i,"xyz");
+        console.log(info3);
+        let info4 = myInfo.replaceAll(/My/ig,"pqr");
+        console.log(info4);
+        console.log(myInfo);
+    </script>
+    <script>
+        let hrt1 = "My first javascript";
+        console.log(hrt1.charAt(3));
+        console.log(hrt1.at(-3));
+    </script>
+    <script>
+        let htp = "This is my Javascript"
+        console.log(htp.substring(1,11));
+        console.log(htp.slice(-5));
+    </script>
+    <script>
+        let hp = "This is my Javascript"
+        console.log(htp.substr(8,8));
     </script>
 </body>
 </html>
