@@ -1,41 +1,44 @@
 let infoList = [];
-
+let index = -1;
 function addInfo() {
     let info = document.getElementById("grocery").value;
-    if (info == "") {
-        alert("Please enter a grocery item");
-    }
-    else if (!infoList.includes(info)) {
+    if (index < 0 && !infoList.includes(info)) {
         infoList.push(info);
     }
     else {
-        alert("This item is already in the list!");
+        infoList[index] = info;
     }
     document.getElementById("grocery").value = "";
+    index = -1;
     displayInfo();
 }
 
 function displayInfo() {
-    let displayList = infoList.map(function (a) {
+    let displayList = infoList.map(function (a, t) {
         return `
         <tr>
         <td>${a}</td>
-        <td><button type="button" class="add-btn" onclick="editInfo()">Edit</button></td>
-        <td><button type="button" class="add-btn" onclick="deletInfo()">Delet</button></td>
+        <td><button type="button" class="add-btn" onclick="editInfo(${t})">Edit</button></td>
+        <td><button type="button" class="add-btn" onclick="deletInfo(${t})">Delet</button></td>
         </tr>
         `
     }).join("");
     document.getElementById("grocery-list").innerHTML = displayList;
 }
 
-function deletInfo(index) {
-    infoList.splice(index, 1);
+function deletInfo(t) {
+    infoList.splice(t, 1);
     displayInfo();
 }
 
-function clearAll(index) {
-    infoList.splice(index);
+function clearAll(t) {
+    infoList.splice(t);
     displayInfo();
+}
+
+function editInfo(h) {
+    index = h;
+    document.getElementById("grocery").value = infoList[h];
 }
 
 displayInfo();
