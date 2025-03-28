@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="firstname" placeholder="Enter first Name">
+    <input type="text" id="middlename" placeholder="Enter middle Name">
+    <input type="text" id="lastname" placeholder="Enter last Name">
+    <button type="button" onclick="myFunction()">Submit</button>
+    <div id="sortname"></div>
+    <script>
+        
+        function myFunction(a) {
+            var firstname = document.getElementById("firstname").value;
+            var middlename = document.getElementById("middlename").value;
+            var lastname = document.getElementById("lastname").value;
+            var full_name = firstname + " " + middlename + " " + lastname;
+            console.log(full_name);
+            console.log(firstname.substr(0,1),middlename.substr(0,1),lastname.substr(0,1));
+
+            var sortName = firstname.substr(0,1)+ "." + middlename.substr(0,1)+ "." + lastname.substr(0,1);
+            document.getElementById("sortname").innerHTML = sortName;
+            }
+        </script>
+        
+</body>
+</html>
