@@ -7,11 +7,15 @@
 </head>
 <body>
     <input type="text" id="mobile" placeholder="Enter your mobile number">
-    <button type="button" id="saveNumber">Save</button>
+    <button type="button" id="saveNumber" onClick="saveNumber()">Save</button>
+    <div id="displayNo"></div>
     <script>
-        let myNumber = document.getElementById("saveNumber").value;
-        myPaddNumber = myNumber.padStart(2,"*");
-        console.log(myPaddNumber);
+        function saveNumber() {
+            let myNumber = document.getElementById("mobile").value;
+            let sliceNumber = myNumber.slice(8, 10);
+            let padNumber = sliceNumber.padStart(8, "*");
+            document.getElementById("displayNo").innerHTML = padNumber;
+        }
     </script>
 </body>
 </html>
