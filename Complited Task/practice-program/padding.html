@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <input type="text" id="mobile" placeholder="Enter your mobile number">
+    <!-- Input field to enter the mobile number -->
+    <input type="tel" id="mobile" maxlength="10" placeholder="Enter your mobile number">
+
+    <!-- Button to trigger the saveNumber() function -->
     <button type="button" id="saveNumber" onClick="saveNumber()">Save</button>
+
+    <!-- Div to display the masked mobile number -->
     <div id="displayNo"></div>
+
     <script>
+        // Function to save and display the masked mobile number
         function saveNumber() {
+            // Get the value from the input field
             let myNumber = document.getElementById("mobile").value;
-            let sliceNumber = myNumber.slice(8, 10);
+            // Slice the last 4 digits of the mobile number
+            let sliceNumber = myNumber.slice(6, 10);
+            // Mask the first 6 digits with '*' and append the last 4 digits
             let padNumber = sliceNumber.padStart(10, "*");
+            // Display the masked number in the 'displayNo' div
             document.getElementById("displayNo").innerHTML = padNumber;
         }
     </script>
 </body>
+
 </html>

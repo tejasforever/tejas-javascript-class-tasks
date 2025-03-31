@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Single-click button that triggers the saveInfo() function when clicked -->
+    <button type="button" onclick="saveInfo()">Click Me!</button>
+
+    <!-- Double-click button that triggers the saveAnotherInfo() function when double-clicked -->
+    <button type="button" ondblclick="saveAnotherInfo()">Double Click Me!</button>
+
+    <script>
+        // Function to execute when the first button is clicked
+        function saveInfo() {
+            // Show an alert for the single-click event
+            alert("This is single click event.");
+        }
+        // Function to execute when the second button is double-clicked
+        function saveAnotherInfo() {
+            // Show an alert for the double-click event
+            alert("This is double click event.");
+        }
+    </script>
+</body>
+
+</html>

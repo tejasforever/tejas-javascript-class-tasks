@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            string= collection of char.
+            string can be access using the index as well.
+            search string function.
+            1. indexof.
+            2. lastindexof.
+            3. includes.
+            4. search
+
+        */
+        let mystring = "this is the javascript";
+        let opds = mystring.search(/T/i);
+        console.log(opds);
+        let matches = mystring.matchAll(/t/gi);
+        console.log(Array.from(matches));
+        console.log(mystring[1]);
+        let ab = mystring.indexOf("a", 14);
+        let opd = mystring.includes("a1");
+        console.log(opd);
+        console.log(ab);
+    </script>
+
+</body>
+
+</html>

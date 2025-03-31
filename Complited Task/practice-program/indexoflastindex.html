@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Array with duplicate values
+        let array = [1, 1, 2, 2, 6, 3, 5];
+        // Using reduce() to get unique values that appear only once
+        let withoutduplicate = array.reduce(function(pre, next, index, t) {
+            // Check if the first and last index of the element are the same (indicating it's unique)
+            if (t.indexOf(next) == t.lastIndexOf(next)) {
+                // Add the unique value to the result array
+                pre.push(next);
+            }
+            return pre;
+        }, []);
+        // Log the array with unique values to the console
+        console.log(withoutduplicate);
+    </script>
+</body>
+
+</html>

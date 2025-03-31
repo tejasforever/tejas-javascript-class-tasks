@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <table id="display">
+
+        </table>
+
+    <script src="data.js"></script>
+    <script>
+
+        const p = d;
+
+      var d1=  p.slice(0,10).map(function(v,index){
+
+            return `<tr>
+                    <td>${v.title}</td>
+                </tr>`
+
+        });
+
+        document.getElementById("display").innerHTML = d1.join(" ");
+
+    </script>
+
+</body>
+</html>

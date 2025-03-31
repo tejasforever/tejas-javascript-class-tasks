@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Define an array with initial values
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // 1. Splice to REMOVE elements
+        // Removes 3 elements starting from index 2 (removes 3, 4, 5)
+        let removedElements = array.splice(2, 3);
+        console.log("Removed Elements:", removedElements); // Output: [3, 4, 5]
+        console.log("Array after removal:", array); // Output: [1, 2, 6, 7, 8, 9, 10]
+        // Reset the array for next operations
+        array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // 2. Splice to ADD elements
+        // Adds 11, 12, 13 at index 4 (before 5)
+        array.splice(4, 0, 11, 12, 13);
+        console.log("Array after adding elements:", array);
+        // Output: [1, 2, 3, 4, 11, 12, 13, 5, 6, 7, 8, 9, 10]
+        // Reset the array for next operations
+        array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // 3. Splice to REPLACE elements
+        // Replaces 2 elements at index 3 with 100, 200
+        let replacedElements = array.splice(3, 2, 100, 200);
+        console.log("Replaced Elements:", replacedElements); // Output: [4, 5]
+        console.log("Array after replacing:", array);
+        // Output: [1, 2, 3, 100, 200, 6, 7, 8, 9, 10]
+        // Reset the array for next operations
+        array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // 4. Splice with NO DELETE, ONLY ADD
+        // Adds 50, 60 at index 1 without removing any elements
+        array.splice(1, 0, 50, 60);
+        console.log("Array after adding without removing:", array);
+        // Output: [1, 50, 60, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        // Reset the array for next operations
+        array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // 5. Splice to REMOVE ALL elements after an index
+        // Removes all elements after index 5
+        let removedAfterIndex = array.splice(5);
+        console.log("Elements removed after index 5:", removedAfterIndex);
+        // Output: [6, 7, 8, 9, 10]
+        console.log("Array after removing all elements after index 5:", array);
+        // Output: [1, 2, 3, 4, 5]
+    </script>
+
+</body>
+
+</html>

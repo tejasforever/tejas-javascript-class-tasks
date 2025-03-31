@@ -8,14 +8,19 @@
 </head>
 <body>
 
-    <table id="products"></table>
+    <table id="products" border="1" width="100%" ></table>
     <script>
+
+        // https://fakestoreapi.com/docs#tag/Products
+        //copy json and try to perform read more for each description 
+
+
         let productList = productData.map(function(a,index){
             return `<tr>
                     <td>${a.title}</td>
                     <td>${a.category}</td>
                     <td>${a.price}</td>
-                    <td id="displayinfo" onClick="readMoreInfo(${index});">${a.description.slice(0,10)}</td>
+                    <td id="displayinfo-${index}" onClick="readMoreInfo(${index});">${a.description.slice(0,10)}</td>
                 </tr>`
             });
         document.getElementById("products").innerHTML = productList.join(" ");
@@ -23,15 +28,16 @@
         let readmore = true;
 
         function readMoreInfo (index){
-            let productReadmore = productList[index];
+            
             if(readmore == true){
-                document.getElementById("displayinfo").innerHTML = productReadmore.slice(0,10).concat("..ReadMore");
+                document.getElementById(`displayinfo-${index}`).innerHTML = productData[index].description.slice(0,10).concat("..ReadMore");
             }
             else {
-                document.getElementById("displayinfo").innerHTML = productReadmore.concat("..ReadLess");
+                document.getElementById(`displayinfo-${index}`).innerHTML = productData[index].description.concat("..ReadLess");
             }
             readmore = !readmore;
         }
+        readMoreInfo(index);
     </script>
 </body>
 </html>

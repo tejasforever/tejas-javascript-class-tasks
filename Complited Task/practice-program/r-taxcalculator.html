@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="salary"/>
+    <button type="button" onclick="calculateTax()">Calculate Tax</button>
+
+    <script>
+        /*
+             you need to develope discount price
+
+             0-10000-> 5%
+             10000-20000->10%
+             20000-30000->20%
+             else
+             25%
+        
+        
+        */
+            function calculateTax()
+            {
+                    let op = +document.getElementById("salary").value;
+                    let tax=0;
+                    
+                    if(op>20000)
+                    {
+                        tax= tax + op*20/100;
+                        
+                    }
+                    else if(op >=10000 && op <=20000)
+                    {
+                        tax= tax+ op*10/100;
+                    }
+                    else
+                    {
+                        tax=tax+ op*5/100;
+                    }
+
+                    console.log(tax);
+            }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Input field to enter or edit information -->
+    <input type="text" id="term" />
+    <!-- Button to save the entered information -->
+    <button onclick="saveInforamtion()">save</button>
+    <!-- Table to display the list of items dynamically -->
+    <table id="display"></table>
+
+    <script>
+        // Array to store the items entered by the user
+        const items = [];
+        // Variable to track the index for editing (default -1 means no edit mode)
+        let index = -1;
+        // Function to save or update information
+        function saveInforamtion() {
+            // Get the value from the input field
+            let p = document.getElementById("term").value;
+            // Check if the value is being added or updated
+            if (index < 0) {
+                // Add a new item if no item is being edited
+                items.push(p);
+            } else {
+                // Update the item at the specified index if in edit mode
+                items[index] = p;
+            }
+            // Reset the index to default after saving
+            index = -1;
+            // Call function to display updated information
+            displayInformation();
+        }
+        // Function to display the items dynamically in the table
+        function displayInformation() {
+            // Map through the items array and create table rows dynamically
+            let a = items.map(function (v, index) {
+                return (`<tr>
+                        <!-- Display the item value in a table cell -->
+                        <td>${v}</td>
+                        <td>
+                            <button onclick="removeItem(${index})">Delete</button>
+                        </td>
+                        <td>
+                            <button onclick="editItem(${index})">Edit</button>
+                        </td>
+                    </tr>`);
+            });
+            // Join the generated rows and display them in the table
+            document.getElementById("display").innerHTML = a.join(" ");
+        }
+        // Function to remove an item from the array
+        function removeItem(d) {
+            // Remove item at the specified index
+            items.splice(d, 1);
+            // Update the displayed list after removal
+            displayInformation();
+        }
+        // Function to edit an item
+        function editItem(d) {
+            // Set the index to the item being edited
+            index = d;
+            // Populate the input field with the item value for editing
+            document.getElementById("term").value = items[d];
+        }
+    </script>
+</body>
+
+</html>
