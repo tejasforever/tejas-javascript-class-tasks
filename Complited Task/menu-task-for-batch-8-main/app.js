@@ -100,6 +100,15 @@ function display(vb) {
   document.getElementById("menu").innerHTML = t.join(" ");
 }
 
+// using set function insted of reduce
+const abc123 = menu.map(items=>items.category);
+console.log(abc123);
+let newList123  = new Set(abc123);
+console.log(newList123);
+console.log(newList123.size);
+
+
+
 const newMenu = menu.reduce(function (s, t) {
   if (!s.includes(t.category)) {
     s.push(t.category);
@@ -108,7 +117,9 @@ const newMenu = menu.reduce(function (s, t) {
 }, ["all"]);
 console.log(newMenu);
 
-const buttons = newMenu.map(function (category) {
+
+
+const buttons = newList123.map(function (category) {
   return `<button type="button" class="filter-btn" 
   data-id="breakfast"
   onclick = "filterMenu('${category}')">
